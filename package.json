@@ -1,6 +1,6 @@
 {
     "name": "pot-odds-calculator",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "description": "Pot-odds calculator",
     "main": "dist/src/pot-odds-calculator.js",
     "types": "dist/src/pot-odds-calculator.d.ts",
