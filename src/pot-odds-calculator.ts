@@ -13,6 +13,10 @@ export function potOddsCalculator(
         return 0
     }
 
+    if (pot === 0) {
+        throw new Error(`'Pot' cannot be zero`)
+    }
+
     if (pot < 0) {
         throw new Error(`'Pot' cannot be a negative value`)
     }

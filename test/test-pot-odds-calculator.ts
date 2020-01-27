@@ -22,3 +22,7 @@ test('should throw when call < 0', t => {
 test('should return 0 when call is 0', t => {
     t.is(0, potOddsCalculator(10, 0))
 })
+
+test('should throw when pot === 0', t => {
+    t.throws(() => potOddsCalculator(0, 1))
+})
