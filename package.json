@@ -1,6 +1,6 @@
 {
     "name": "pot-odds-calculator",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "description": "Pot-odds calculator",
     "main": "dist/src/pot-odds-calculator.js",
     "types": "dist/src/pot-odds-calculator.d.ts",
@@ -24,8 +24,7 @@
         "test": "nyc ava",
         "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
         "watch:test": "nodemon -e 'ts json' -x 'npm test || true'",
-        "push-with-tags": "git push origin master && git push origin --tags",
-        "push-and-publish": "npm run push-with-tags && npm publish"
+        "push-with-tags": "git push origin master && git push origin --tags"
     },
     "repository": {
         "type": "git",
