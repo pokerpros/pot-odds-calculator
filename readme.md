@@ -29,5 +29,5 @@ For example:
 
 ``` shell
 pot-odds 30 10
-//=>0.25
+//=> 0.25
 ```
