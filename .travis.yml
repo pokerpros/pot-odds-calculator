@@ -12,6 +12,8 @@ sudo: false
 stages:
   - lint
   - test
+  - name: deploy
+    if: branch = master
 
 install:
   - npm ci
@@ -20,6 +22,16 @@ jobs:
   include:
     - stage: lint
       script: npm run lint
+    - stage: deploy
+      script:
+        - npm run compile
+        - npm publish
+      deploy:
+        provider: npm
+        email: eric.s.crosson@utexas.edu
+        api_key: $NPM_API_KEY
+        on:
+          tags: true
 
 after_success:
   - npm run coverage
