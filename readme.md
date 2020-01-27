@@ -14,20 +14,20 @@
 ## Install
 
 ```shell
-npm install pot-odds-calculator
+npm install -g pot-odds-calculator
 ```
 
 ## Use
 
-```typescript
-import { potOddsCalculator } from 'pot-odds-calculator'
-// TODO: describe usage
+Arguments are given as
+
+``` shell
+pot-odds <pot> <call>
 ```
 
-## Related
+For example:
 
-TODO
-
-## Acknowledgments
-
-TODO
+``` shell
+pot-odds 30 10
+//=>0.25
+```
