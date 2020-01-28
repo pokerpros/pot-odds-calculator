@@ -25,9 +25,10 @@ jobs:
     - stage: lint
       script: npm run lint
     - stage: deploy
-      script:
+      before_script:
         - npm run compile
         - echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc
+      script:
         - npm publish
       deploy:
         skip_cleanup: true
