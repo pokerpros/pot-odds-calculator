@@ -27,12 +27,12 @@ jobs:
     - stage: deploy
       script:
         - npm run compile
+        - echo "//registry.npmjs.org/:_authToken=\${NPM_AUTH_TOKEN}" > .npmrc
         - npm publish
       deploy:
+        skip_cleanup: true
         provider: npm
         email: eric.s.crosson@utexas.edu
-        api_key:
-          secure: pyE0Ls6jbk7hKa/i6FrZ+oTDksS/oqT/L7QiR8cyKMOk7+JMT8B2XQ81kAbgIJIMIfQjZqc3q7CtsmTOqUuWBM3wusleqrkoTTusH2MKyY1rytCufOfNF8dLtqI7QT+lNYGQSoX3aTgePmSqpWcas1NNGqcNl2X/2sA6ja3aWGRp3Al5Do9yxYrv7rtsnYU08jQ/k43Zcv9vPmzuwx1LOImRGhFH+qbbZ8fYqsjeEOzx83UaXgO/Tb303GyPC/pw2CDde9YxsA/Sn2Lc/Vs86k8y+PfyvJiR/dcbrrWg/WsVY6GhMUISCxCs9LWhUpIr2TLjkwrxT6KlY9TKxiU6bD3j7YdJsvLYDka3KcXVaDlbzzVBKaMmE18BiF3kgkkQPmnutA4y0Xx87l8AYUg1R16nTlIRfJMA/LCF0WVUWuQB2JUVqfqZs+b9T0AiolHI6Avczn/MShJ8oUawu2NtvDdiGegY9roAYkS9KXnMxrA4cn1OYWIzNzSLGXsrH+QzScBCx9K6tnlhO+gSY/lWEMwv5qeaKHEYElcc9xJIBIIe3ey4+SllCNZ91jtwb1GqtcalYYvWWReZUy/L63PGUAFICWkq10G/WMjQBn6mdu3fBajBmA54XAYaFMeQHKwm05//yGGG278Fhr9qB+/fT9gpfFLDANQX2K9bzrg2VVA=
         on:
           tags: true
 
