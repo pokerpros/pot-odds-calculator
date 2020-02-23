@@ -5,8 +5,15 @@ module.exports = {
         ecmaVersion: 2018, // Allows parsing of modern ECMAScript features
         sourceType: 'module', // Allows for the use of imports
     },
-    plugins: ['@typescript-eslint'],
-    extends: ['plugin:@typescript-eslint/recommended'],
+    plugins: [
+	'@typescript-eslint',
+	'security'
+    ],
+    extends: [
+	'plugin:@typescript-eslint/recommended',
+	'plugin:security/recommended',
+        'plugin:ava/recommended'
+    ],
     rules: {
         '@typescript-eslint/explicit-function-return-type': ['warn', {allowExpressions: true}],
         '@typescript-eslint/interface-name-prefix': ['warn', 'never'],
